@@ -1,0 +1,6 @@
+windows-checks-bats
+===================
+
+Batch files to do basic IT checks such as ping test, check log files etc
+
+These scripts output a JSON Array but can easily be changed to output anything else

@@ -34,3 +34,10 @@ Performs ping on the IPs given and returns a JSON array
 
 	<notation>[{"name":"DISPLAYNAME", "value":"YES/NO"}]
 
+
+License
+-------
+
+The MIT License (MIT)
+
+Copyright (c) 2013 gieglas

@@ -32,12 +32,43 @@ Performs ping on the IPs given and returns a JSON array
 
 **Output**
 
-	<notation>[{"name":"DISPLAYNAME", "value":"YES/NO"}]
+	<notation>[{"name":"DISPLAYNAME", "value":"YES/NO"},...]
 
+### checkNTBackup.bat
 
+Checks ntbackup logs. Finds the latest log file in the folder and looks for date (as defined by date format), counts the number of Backup Complete and Backup Verified, as defined in config file. Also checks if the word error exists.All phrases that are search are defined in the config file as they can be differentdepending on the localization. 
+Idea was taken from [ntbackup-logcheck]
+
+**Dependencies**
+
+    - getDateMinusArg.vbs (to get the CORRECT date)
+    - getDateFormatVars.bat (to get the Date Variables)
+
+**Usage**
+
+    checkNTBackup.bat configfile.config
+
+**Config Input**
+
+    - cscript,C:\Windows\System32\cscript
+    - getdate,getDateMinusArg.vbs (get date vbscript)
+    - net,C:\Windows\System32\net.exe
+    - logfilein,"PATHOFSHAREDFOLDER"#"USERNAME"#"PASSWORD"#"DATEFORMAT"#NOOFCOMPLETED"#"NOOFVERIFIED"#"DISPLAYNAME" 
+    e.g. _logfilein,"\\BackupServer"#"BackupServer\administrator"#"password"#"#d#/#m#/#yyyy#"#"3"#"0"#"Backups from server."
+    - backupComplete,Backup completed (localization)
+    - verifyCompleted,Verify completed (localization)
+    - errorStr,Error (localization)
+    - find,C:\Windows\System32\find.exe
+    - notation,^<notation^> (after this notation is the JSON array)
+
+**Output**
+
+    <notation>[{"name":"DISPLAYNAME", "value":"ERRORS/OK"},...]
+	
 License
 -------
 
 The MIT License (MIT)
 
 Copyright (c) 2013 gieglas
+[ntbackup-logcheck]: http://www.heinzi.at/projects/ntbackup-logcheck/

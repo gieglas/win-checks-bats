@@ -18,6 +18,13 @@ Installation
 Output
 ------
 Prints on the screen a **notation** and on the next line the **JSON Array** with the results. The notation is printed to help applications recognize when the JSON Array begins. 
+For example:
+ ```json
+<notation>[ {"name":"10.10.10.10","value":"YES"} 
+, {"name":"10.10.10.11","value":"YES"} 
+, {"name":"10.10.10.12","value":"NO"} 
+, {"name":"10.10.10.13","value":"YES"} ]
+```
 
 Scripts
 -------

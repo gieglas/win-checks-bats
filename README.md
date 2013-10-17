@@ -36,7 +36,7 @@ Performs ping on the IPs given and returns a JSON array
 
 ### checkNTBackup.bat
 
-Checks ntbackup logs. Finds the latest log file in the folder and looks for date (as defined by date format), counts the number of Backup Complete and Backup Verified, as defined in config file. Also checks if the word error exists.All phrases that are search are defined in the config file as they can be differentdepending on the localization. 
+Checks ntbackup logs. Finds the latest log file in the folder and looks for date (as defined by date format), counts the number of Backup Complete and Backup Verified, as defined in config file. Also checks if the word error exists.All phrases that are searched are defined in the config file as they can be different depending on the localization. 
 Idea was taken from [ntbackup-logcheck]
 
 **Dependencies**
@@ -61,9 +61,29 @@ Idea was taken from [ntbackup-logcheck]
     - find,C:\Windows\System32\find.exe
     - notation,^<notation^> (after this notation is the JSON array)
 
+### checkNetworkDiskSpace.bat
+
+Checks the free space in bytes using shared folders. 
+
+**Dependencies**
+
+    - getDateMinusArg.vbs (to get the CORRECT date)
+
+**Usage**
+
+    checkNetworkDiskSpace.bat configfile.config
+
+**Config Input**
+
+	- cscript,C:\Windows\System32\cscript
+	- net,C:\Windows\System32\net.exe
+	- getdate,..\scripts\getDateMinusArg.vbs (get date vbscript)
+	- checkdisksizepaths,PATHOFSHAREDFOLDER:USERNAME:PASSWORD:TEMPDRIVE#DISPLAYNAME eg\\10.10.10.10\temp:10.10.10.10\administrator:pass:o#10.10.10.10
+	- notation,^<notation^> (after this notation is the JSON array)
+	
 **Output**
 
-    <notation>[{"name":"DISPLAYNAME", "value":"ERRORS/OK"},...]
+    <notation>[{"name":"DISPLAYNAME", "value":"SIZEinBytes"},...]
 	
 License
 -------

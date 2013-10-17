@@ -22,6 +22,10 @@ Prints on the screen a **notation** and on the next line the **JSON Array** with
 Scripts
 -------
 
+- [pingTest.bat]
+- [checkNTBackup.bat]
+- [checkNetworkDiskSpace.bat]
+
 ### pingTest.bat
 
 Performs ping on the IPs given and returns a JSON array 
@@ -96,3 +100,6 @@ The MIT License (MIT)
 
 Copyright (c) 2013 gieglas
 [ntbackup-logcheck]: http://www.heinzi.at/projects/ntbackup-logcheck/
+[pingTest.bat]:#pingtestbat
+[checkNTBackup.bat]:#checkntbackupbat
+[checkNetworkDiskSpace.bat]:#checknetworkdiskspacebat

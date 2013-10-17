@@ -43,7 +43,7 @@ Performs ping on the IPs given and returns a JSON array
 
 **Output**
 
-	<notation>[{"name":"DISPLAYNAME", "value":"YES/NO"},...]
+```json<notation>[{"name":"DISPLAYNAME", "value":"YES/NO"},...]```
 
 ### checkNTBackup.bat
 
@@ -74,7 +74,7 @@ Idea was taken from [ntbackup-logcheck]
 
 **Output**
 
-    <notation>[{"name":"DISPLAYNAME", "value":"ERRORS/OK"},...]
+```json<notation>[{"name":"DISPLAYNAME", "value":"ERRORS/OK"},...]```
 
 ### checkNetworkDiskSpace.bat
 
@@ -98,7 +98,7 @@ Checks the free space in bytes using shared folders.
 	
 **Output**
 
-    <notation>[{"name":"DISPLAYNAME", "value":"SIZEinBytes"},...]
+```json<notation>[{"name":"DISPLAYNAME", "value":"SIZEinBytes"},...]```
 	
 License
 -------

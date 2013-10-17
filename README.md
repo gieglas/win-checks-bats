@@ -61,6 +61,10 @@ Idea was taken from [ntbackup-logcheck]
     - find,C:\Windows\System32\find.exe
     - notation,^<notation^> (after this notation is the JSON array)
 
+**Output**
+
+    <notation>[{"name":"DISPLAYNAME", "value":"ERRORS/OK"},...]
+
 ### checkNetworkDiskSpace.bat
 
 Checks the free space in bytes using shared folders. 

@@ -32,6 +32,8 @@ Scripts
 - [pingTest.bat]
 - [checkNTBackup.bat]
 - [checkNetworkDiskSpace.bat]
+- [checkLogFileExists.bat]
+- [checkLogFileContents.bat]
 
 ### pingTest.bat
 

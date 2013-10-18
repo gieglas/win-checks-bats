@@ -1,14 +1,14 @@
 windows-checks-bats
 ===================
 
-Batch files to do basic IT checks such as ping test, check log files etc
+Batch files to do basic IT checks such as ping test, check log files etc.
 
 These scripts output a JSON Array but can easily be changed to output anything else. 
 
 Why?
 ----
 
-Needed to automate basic IT checks in an environment with different technologies and setups. Tried to make the scripts as flexible as possible. 
+Needed to automate basic IT checks in an environment with different technologies and setups. Tried to make the scripts as flexible as possible. They are not complete and surely not perfect, but could be useful to someone so here they are.
 
 Installation
 ------------

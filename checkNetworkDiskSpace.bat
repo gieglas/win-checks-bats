@@ -59,7 +59,7 @@ goto:eof
 
 :checkDiscSpace  
 :::--------------------------------------------------------
-:::-- Function check the size disk if it is bigger than a limit
+:::-- Function get the free disk space in bytes
 :::
 :::-- Prerequisite: parameter
 :::

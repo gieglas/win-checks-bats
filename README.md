@@ -105,7 +105,69 @@ Checks the free space in bytes using shared folders.
 ```json
 <notation>[{"name":"DISPLAYNAME", "value":"SIZEinBytes"},...]
 ```
+
+### checkLogFileExists.bat
+
+Checks if log files with specific format (including date) exists and returns JSON Array
+
+**Dependencies**
+
+	-	getDateMinusArg.vbs (to get the CORRECT date)
+	-	getDateFormatVars.bat (to get the Date Variables)
+
+**Usage**
+
+    checkLogFileExists.bat configfile.config
+
+**Config Input**
+
+	-  cscript,C:\Windows\System32\cscript
+	-  servicesfolder,log files folder must be shared folder eg \\10.10.10.10\Services
+	-  net,C:\Windows\System32\net.exe
+	-  getdate,getDateMinusArg.vbs (get date vbscript)
+	-  login,log files server login eg administrator pass
+	-  errorfilesin,PATHOFFILE#"DISPLAYNAME" e.g. \ServiceSubfolder\logs\#yyyy#-#mm#-#dd#\error.log:"Something Generator Service on #yyyy#-#mm#-#dd#" 
+	-  notation,^<notation^> (after this notation is the JSON array)
 	
+**Output**
+
+```json
+<notation>[{"name":"DISPLAYNAME", "value":"ERRORS/OK"},...]
+```
+
+### checkLogFileContents.bat
+
+Checks the contents for a keyword including date, and the existence or non existence of phrases. Can search for specific log file or the most recently modified file in the location specified.
+
+**Dependencies**
+
+	-	getDateMinusArg.vbs (to get the CORRECT date)
+	-	getDateFormatVars.bat (to get the Date Variables)
+
+**Usage**
+
+    checkLogFileContents.bat configfile.config
+
+**Config Input**
+
+	-  cscript,C:\Windows\System32\cscript
+	-  getdate,getDateMinusArg.vbs (get date vbscript)
+	-  net,C:\Windows\System32\net.exe
+	-  errorfilesin,"PATHOFSHAREDFOLDER"#"USERNAME"#"PASSWORD"#"SUBFOLDERFILE"#"SEARCHNAME1"#"SEARCHNAME2"#"SEARCHNAMENOT1"#"DISPLAYNAME"#"FILEORLOCATION" 
+	-				eg"C:\SyncBack_NI\"#""#""#"Server_DB_Backup_Log.txt"#"#dd#/#mm#/#yyyy#"#""#"error"#"Server DB Backup Copied"#"f"
+	-				eg"\\10.10.10.10\backup"#"10.10.10.10\administrator"#"pass"#"\"#"#_m#/#_d#/#yyyy#"#"Backup completed"#"error"#"10.10.10.10 Daily Backup on #dd#/#mm#/#yyyy#"#"l" 
+	-				NOTE:SEARCHNAME1,SEARCHNAME2 are the phrases to check if they exist. If they don't exist an error is produced.
+	-				NOTE:SEARCHNAMENOT1 is the phrase to check if it does NOT exist. If it exists an error is produced.
+	-				NOTE:FILEORLOCATION "l" finds the last file in the folder "f" finds the spesific file
+	-  find,C:\Windows\System32\find.exe
+	-  notation,^<notation^> (after this notation is the JSON array
+	
+**Output**
+
+```json
+<notation>[{"name":"DISPLAYNAME", "value":"ERRORS/OK"},...]
+```
+
 License
 -------
 
@@ -116,3 +178,5 @@ Copyright (c) 2013 gieglas
 [pingTest.bat]:#pingtestbat
 [checkNTBackup.bat]:#checkntbackupbat
 [checkNetworkDiskSpace.bat]:#checknetworkdiskspacebat
+[checkLogFileExists.bat]:#checklogfileexistsbat
+[checkLogFileContents.bat]:#checklogfilecontentsbat

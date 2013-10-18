@@ -129,6 +129,7 @@ Checks if log files with specific format (including date) exists and returns JSO
 	-  getdate,getDateMinusArg.vbs (get date vbscript)
 	-  login,log files server login eg administrator pass
 	-  errorfilesin,PATHOFFILE#"DISPLAYNAME" e.g. \ServiceSubfolder\logs\#yyyy#-#mm#-#dd#\error.log:"Something Generator Service on #yyyy#-#mm#-#dd#" 
+	- 				NOTE: PATHOFFILE can also have #STAR#
 	-  notation,^<notation^> (after this notation is the JSON array)
 	
 **Output**

@@ -19,6 +19,7 @@ SETLOCAL ENABLEDELAYEDEXPANSION
 ::: -  getdate,getDateMinusArg.vbs (get date vbscript)
 ::: -  login,log files server login eg administrator pass
 ::: -  errorfilesin,PATHOFFILE#"DISPLAYNAME" e.g. \ServiceSubfolder\logs\#yyyy#-#mm#-#dd#\error.log:"Something Generator Service on #yyyy#-#mm#-#dd#" 
+::: - 				NOTE: PATHOFFILE can also have #STAR#
 ::: -  notation,^<notation^> (after this notation is the JSON array)
 :::
 :::-- How to call
@@ -67,6 +68,8 @@ FOR %%A IN (%_errorfiles%) DO (
 	for /F "tokens=1,2 delims=:" %%K IN ("%%A") DO (
 		SET _errorfile=%%K
 		SET _name=%%L
+		::: handle star #STAR# in find
+		SET _errorfile=!_errorfile:#STAR#=*!
 		::: remove double quotes
 		set _name=!_name:"=!
 		::: remove tabs

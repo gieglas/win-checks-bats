@@ -3,7 +3,7 @@ SETLOCAL ENABLEDELAYEDEXPANSION
 
 :::-- Performs ping on the IPs given and returns a JSON array 
 :::
-:::-- Prerequisites, Dependencies: 
+:::-- Prerequisites, Dependencies:  
 ::: -	parameter (config file)
 ::: -	getDateMinusArg.vbs (to get the CORRECT date)
 :::
